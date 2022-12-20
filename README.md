@@ -1,2 +1,19 @@
 # init.lua
-neovim config based on ThePrimeagen's init.lua
+A neovim config based on [ThePrimeagen's init.lua](https://github.com/ThePrimeagen/init.lua).
+
+# Install
+
+## Create python venv
+Create a dedicated python venv for nvim, to be isolated from system python or any project's virtual environment.
+
+```
+python -m venv ~/.venv/nvim
+~/.venv/nvim/bin/python -m pip install pynvim
+```
+
+## Git clone or copy
+If ~/.config/nvim/ folder is empty or it can be removed and create a new one, then use git clone:
+```
+git clone https://github.com/zhaowb/init.lua.git ~/.config/nvim/
+```
+
