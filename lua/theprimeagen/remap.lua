@@ -1,7 +1,8 @@
 
 vim.g.mapleader = " "
-vim .keymap.set("n", "<leader>pv", vim.cmd.Vex)  -- " pv" open file browser in vertical split
-                                                 -- ":Rex" return to previous buffer
+vim .keymap.set("n", "<leader>v", vim.cmd.Vex)  -- " v" open file browser in vertical split
+vim .keymap.set("n", "<leader>ex", vim.cmd.Ex)  -- " ex" open file browser
+                                                -- ":Rex" return to previous buffer
 
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")  -- move selection down, with auto indent
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")  -- move selection up, with auto indent
@@ -37,7 +38,8 @@ vim.keymap.set("n", "Q", "<nop>")  -- disable Q. Q is to repeat last recorded re
 
 vim.keymap.set("n", "<leader>f", vim.lsp.buf.format)
 
-vim.keymap.set("n", "<C-k>", "<cmd>cnext<CR>zz")  -- ?
+-- quickfix commands
+vim.keymap.set("n", "<C-k>", "<cmd>cnext<CR>zz")
 vim.keymap.set("n", "<C-j>", "<cmd>cprev<CR>zz")
 vim.keymap.set("n", "<leader>k", "<cmd>lnext<CR>zz")
 vim.keymap.set("n", "<leader>j", "<cmd>lprev<CR>zz")
