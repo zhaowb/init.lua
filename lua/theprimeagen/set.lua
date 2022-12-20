@@ -22,12 +22,16 @@ vim.opt.incsearch = true  -- select as search typing
 
 vim.opt.termguicolors = true
 
-vim.opt.scrolloff = 8
+vim.opt.scrolloff = 8  -- keep 8 lines when scroll
 vim.opt.signcolumn = "yes"
-vim.opt.isfname:append("@-@")
+vim.opt.isfname:append("@-@")  -- include '@' in filename pattern
 
-vim.opt.updatetime = 50
-vim.opt.colorcolumn = "80"  -- column 80 has different color like UltraEdit
+vim.opt.updatetime = 50  -- nothing typed in 50ms, write swap file to disk
+-- vim.opt.colorcolumn = "80"  -- hightlight column 80
+-- -- python lsp is confused after highlight column
 
-vim.g.mapleader = " "
-
+-- add autocmd to trim trailing space chars before write
+vim.api.nvim_create_autocmd({"BufWritePre"}, {
+  pattern = {"*.py", "*.c", "*.h"},
+  command = [[%s/\s\+$//e]],
+})
