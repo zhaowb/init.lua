@@ -1,0 +1,37 @@
+commit c7e16a62918920e84e35da40eea2067cfe050d40 (HEAD -> master, wenbo-bypass-treesitter-query-error)
+Author: Wenbo Zhao <zhaowb@gmail.com>
+Date:   Tue Dec 20 16:55:16 2022 +1300
+
+    disable lines cause treesitter error in neovim
+
+diff --git a/queries/vim/highlights.scm b/queries/vim/highlights.scm
+index ce25b13b..856d36e9 100644
+--- a/queries/vim/highlights.scm
++++ b/queries/vim/highlights.scm
+@@ -199,7 +199,7 @@
+ (integer_literal) @number
+ (float_literal) @float
+ (comment) @comment @spell
+-(line_continuation_comment) @comment @spell
++;; (line_continuation_comment) @comment @spell
+ (pattern) @string.special
+ (pattern_multi) @string.regex
+ (filename) @string
+@@ -248,7 +248,7 @@
+ ] @operator
+ 
+ ; Some characters have different meanings based on the context
+-(unary_operation "!" @operator)
++;; (unary_operation "!" @operator)
+ (binary_operation "." @operator)
+ 
+ 
+@@ -277,7 +277,7 @@
+ ((set_value) @number
+  (#match? @number "^[0-9]+(\.[0-9]+)?$"))
+ 
+-(inv_option "!" @operator)
++;; (inv_option "!" @operator)
+ (set_item "?" @operator)
+ 
+ ((set_item

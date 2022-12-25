@@ -27,9 +27,17 @@ git clone --depth 1 https://github.com/wbthomason/packer.nvim\
 ```
 
 ## Run nvim first time
+`cd ~/.config/nvim/; nvim .`
 Use `:Ex` open file explorer navigate to ~/.config/nvim/lua/theprimeagen/packer.lua
 Do `:so`
 Do `:PackerSync`
 Quit and reopen nvim, press Enter skip treesitter messages and wait for treesitter installation done.
 
+## bypass treesitter query issue
+```
+cd ~/.local/share/nvim/site/pack/packer/start/nvim-treesitter/queries/vim/
+git apply ~/.config/nvim/bypass-treesitter-vim-highlight-error.diff
+```
+Before fix, ':checkhealth' shows vim query for hightlight fail.
+After fix vim hightlight is working.
 
