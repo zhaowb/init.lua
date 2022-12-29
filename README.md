@@ -19,25 +19,11 @@ If ~/.config/nvim/ folder is empty or it can be removed and create a new one, th
 git clone https://github.com/zhaowb/init.lua.git ~/.config/nvim/
 ```
 
-## Install packer.nvim
-See https://github.com/wbthomason/packer.nvim#quickstart
-```
-git clone --depth 1 https://github.com/wbthomason/packer.nvim\
- ~/.local/share/nvim/site/pack/packer/start/packer.nvim
-```
-
-## Run nvim first time
+# Run nvim first time
 `cd ~/.config/nvim/; nvim .`
-Use `:Ex` open file explorer navigate to ~/.config/nvim/lua/theprimeagen/packer.lua
-Do `:so`
-Do `:PackerSync`
-Quit and reopen nvim, press Enter skip treesitter messages and wait for treesitter installation done.
+Wait lazy.nvim install to finish and treesitter to finish, then quit.
 
-## bypass treesitter query issue
-```
-cd ~/.local/share/nvim/site/pack/packer/start/nvim-treesitter/queries/vim/
-git apply ~/.config/nvim/bypass-treesitter-vim-highlight-error.diff
-```
-Before fix, ':checkhealth' shows vim query for hightlight fail.
-After fix vim hightlight is working.
+## Check health and install missing tools
+In nvim run command ':checkhealth'.
+Tool [rg](https://github.com/BurntSushi/ripgrep#installation) and [fd](https://github.com/sharkdp/fd#installation) are recommended to be installed.
 
