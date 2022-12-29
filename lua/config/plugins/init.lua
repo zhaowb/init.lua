@@ -4,7 +4,9 @@ return {
     "folke/which-key.nvim",
     {
         'nvim-telescope/telescope.nvim', tag = '0.1.0',
-        requires = { {'nvim-lua/plenary.nvim'} }
+        dependencies = {
+            'nvim-lua/plenary.nvim'
+        },
     },
     {
         'rose-pine/neovim',
@@ -44,8 +46,6 @@ return {
                 },
             }
         end
-
-    },
     },
     'nvim-treesitter/playground',
     'theprimeagen/harpoon',
