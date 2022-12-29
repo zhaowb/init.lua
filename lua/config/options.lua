@@ -30,8 +30,3 @@ vim.opt.updatetime = 50  -- nothing typed in 50ms, write swap file to disk
 -- vim.opt.colorcolumn = "80"  -- hightlight column 80
 -- -- python lsp is confused after highlight column
 
--- add autocmd to trim trailing space chars before write
-vim.api.nvim_create_autocmd({"BufWritePre"}, {
-  pattern = {"*.py", "*.c", "*.h"},
-  command = [[%s/\s\+$//e]],
-})

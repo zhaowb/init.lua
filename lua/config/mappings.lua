@@ -1,4 +1,3 @@
-
 vim.g.mapleader = " "
 vim .keymap.set("n", "<leader>v", vim.cmd.Vex)  -- " v" open file browser in vertical split
 vim .keymap.set("n", "<leader>ex", vim.cmd.Ex)  -- " ex" open file browser
@@ -46,4 +45,36 @@ vim.keymap.set("n", "<leader>j", "<cmd>lprev<CR>zz")
 
 vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])  -- search/replace current word
 vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })  -- chmod +x current file
+
+-- fugitive
+vim.keymap.set("n", "<leader>gits", vim.cmd.Git);
+
+-- harpoon
+local mark = require("harpoon.mark")
+local ui = require("harpoon.ui")
+
+vim.keymap.set("n", "<leader>a", mark.add_file)
+vim.keymap.set("n", "<C-e>", ui.toggle_quick_menu)
+
+vim.keymap.set("n", "<C-h>", function() ui.nav_file(1) end)
+vim.keymap.set("n", "<C-t>", function() ui.nav_file(2) end)
+vim.keymap.set("n", "<C-n>", function() ui.nav_file(3) end)
+vim.keymap.set("n", "<C-s>", function() ui.nav_file(4) end)
+
+-- lsp
+local lsp = require('lsp-zero')
+
+lsp.preset('recommended')
+lsp.setup()
+
+-- telescope
+local builtin = require('telescope.builtin')
+vim.keymap.set('n', '<leader>ff', builtin.find_files, {})
+vim.keymap.set('n', '<C-p>', builtin.git_files, {})
+vim.keymap.set('n', '<leader>gs', function()
+    builtin.grep_string({ search = vim.fn.input("Grep > ") })
+end)
+
+-- undotree
+vim.keymap.set("n", "<leader>u", vim.cmd.UndotreeToggle)
 
