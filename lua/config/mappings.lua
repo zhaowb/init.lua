@@ -78,3 +78,6 @@ end)
 -- undotree
 vim.keymap.set("n", "<leader>u", vim.cmd.UndotreeToggle)
 
+-- null-ls
+vim.keymap.set("n", "<leader>F", vim.lsp.buf.format)
+
