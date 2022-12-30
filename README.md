@@ -19,6 +19,16 @@ If ~/.config/nvim/ folder is empty or it can be removed and create a new one, th
 git clone https://github.com/zhaowb/init.lua.git ~/.config/nvim/
 ```
 
+## Bypass treesitter query error
+Without this bypass, `:checkhealth nvim-treesitter` reports query error on 'help' or 'vim'.
+Depend on which one failed, apply corresponding bypass.
+```
+cd ~/.local/share/nvim/lazy/nvim-treesitter/queries/help/
+git apply ~/.config/nvim/bypass-treesitter-query-error.diff
+git apply ~/.config/nvim/bypass-treesitter-vim-highlight-error.diff
+```
+After :Lazy auto refresh treesitter, the HEAD may detached. In this case, it may need manual sync to master and re-apply bypass depending on the situation.
+
 # Run nvim first time
 `cd ~/.config/nvim/; nvim .`
 Wait lazy.nvim install to finish and treesitter to finish, then quit.

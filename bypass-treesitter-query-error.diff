@@ -1,0 +1,17 @@
+commit a114bde8c4b0d3c8dbbd21737bffd55a1a82471f
+Author: Wenbo Zhao <zhaowb@gmail.com>
+Date:   Fri Dec 30 12:09:26 2022 +1300
+
+    bypass query error for lazy.nvim
+
+diff --git a/queries/help/injections.scm b/queries/help/injections.scm
+index 09bbe44..e77de63 100644
+--- a/queries/help/injections.scm
++++ b/queries/help/injections.scm
+@@ -1,3 +1,4 @@
+ (codeblock
+-  (language) @language
+-  (code) @content)
++;;  (language) @language
++;;  (code) @content
++)
