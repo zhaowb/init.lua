@@ -29,6 +29,17 @@ git apply ~/.config/nvim/bypass-treesitter-vim-highlight-error.diff
 ```
 After :Lazy auto refresh treesitter, the HEAD may detached. In this case, it may need manual sync to master and re-apply bypass depending on the situation.
 
+## pycodestyle config
+Python LSP uses pycodestyle by default (pylsp.plugins.pycodestyle)
+Set config file as example (if none exists and necessary to make changes):
+```
+cat > ~/.config/pycodestyle
+[pycodestyle]
+max-line-length = 160 
+^D
+```
+Reference: https://pycodestyle.pycqa.org/en/latest/intro.html#configuration
+
 # Run nvim first time
 `cd ~/.config/nvim/; nvim .`
 Wait lazy.nvim install to finish and treesitter to finish, then quit.
