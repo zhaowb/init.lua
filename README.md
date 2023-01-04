@@ -19,7 +19,8 @@ If ~/.config/nvim/ folder is empty or it can be removed and create a new one, th
 git clone https://github.com/zhaowb/init.lua.git ~/.config/nvim/
 ```
 
-## Bypass treesitter query error
+## ~Bypass treesitter query error~
+Following is not in use currently. Leave it for reference.
 Without this bypass, `:checkhealth nvim-treesitter` reports query error on 'help' or 'vim'.
 Depend on which one failed, apply corresponding bypass.
 ```
@@ -47,4 +48,9 @@ Wait lazy.nvim install to finish and treesitter to finish, then quit.
 ## Check health and install missing tools
 In nvim run command ':checkhealth'.
 Tool [rg](https://github.com/BurntSushi/ripgrep#installation) and [fd](https://github.com/sharkdp/fd#installation) are recommended to be installed.
+
+# Python formatting functions
+'gd' for goto definition (by [lsp-zero](https://github.com/VonHeikemen/lsp-zero.nvim/lsp-zero.nvim/wiki/Under-the-hood)
+'gl' for goto diagnositic in float window (see above link), '[d', ']d' for prev/next diagnositic
+"<leader>F" for format current file (by mappings.lua), including isort.
 

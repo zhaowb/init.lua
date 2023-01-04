@@ -4,7 +4,13 @@ return {
         -- LSP Support
         { 'neovim/nvim-lspconfig' },
         { 'williamboman/mason.nvim' },
-        { 'williamboman/mason-lspconfig.nvim' },
+        { 'williamboman/mason-lspconfig.nvim',
+            config = function()
+                require("mason-lspconfig").setup {
+                    ensure_installed = { "pylsp" }
+                }
+            end
+        },
 
         -- Autocompletion
         { 'hrsh7th/nvim-cmp' },
