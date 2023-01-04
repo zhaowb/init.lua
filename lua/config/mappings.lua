@@ -2,6 +2,7 @@ vim.g.mapleader = " "
 vim.keymap.set("n", "<leader>v", vim.cmd.Vex) -- " v" open file browser in vertical split
 vim.keymap.set("n", "<leader>ex", vim.cmd.Ex) -- " ex" open file browser
 -- ":Rex" return to previous buffer
+vim.keymap.set("n", "<leader>w", ":set wrap!<CR>") -- toggle wrap
 
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv") -- move selection down, with auto indent
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv") -- move selection up, with auto indent
