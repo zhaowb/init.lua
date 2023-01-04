@@ -46,4 +46,3 @@ function M.has_formatter(ft)
 end
 
 return M
-
