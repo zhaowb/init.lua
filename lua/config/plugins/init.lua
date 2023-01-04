@@ -70,7 +70,12 @@ return {
             -- Snippets
             { 'L3MON4D3/LuaSnip' },
             { 'rafamadriz/friendly-snippets' },
-        }
+        },
+        config = function()
+            local lsp = require('lsp-zero')
+            lsp.preset('recommended')
+            lsp.setup()
+        end
     },
     'airblade/vim-gitgutter',
 }
