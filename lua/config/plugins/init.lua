@@ -19,5 +19,17 @@ return {
     'theprimeagen/harpoon',
     'mbbill/undotree',
     -- 'tpope/vim-fugitive',
-    'airblade/vim-gitgutter',
+    {
+        -- see https://github.com/airblade/vim-gitgutter#getting-started
+        -- for default key mappings
+        -- "[c" and "]c" jump between hunks (a hunk is a block of change)
+        -- "<leader>hp" preview
+        -- "<leader>hs" stage
+        -- "<leader>hu" undo change. WARN: cannot redo, use undotree for redo
+        'airblade/vim-gitgutter',
+        config=function ()
+            -- use rg replace grep
+            vim.g.gitgutter_grep = 'rg'
+        end
+    }
 }

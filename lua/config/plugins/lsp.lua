@@ -7,7 +7,11 @@ return {
         { 'williamboman/mason-lspconfig.nvim',
             config = function()
                 require("mason-lspconfig").setup {
-                    ensure_installed = { "pyright", "sumneko_lua" }
+                    ensure_installed = {
+                        -- use pyright lsp, no more config needed
+                        "pyright",
+                        "sumneko_lua"
+                    }
                 }
             end
         },
