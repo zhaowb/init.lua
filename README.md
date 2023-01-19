@@ -1,7 +1,9 @@
 # init.lua
-A neovim config based on [ThePrimeagen's init.lua](https://github.com/ThePrimeagen/init.lua).
+A neovim config originally based on [ThePrimeagen's init.lua](https://github.com/ThePrimeagen/init.lua) then changed to [Lazy.nvim](https://github.com/folke/lazy.nvim).
 
-This is not very user friendly to install from clone. The [kickstart](https://github.com/nvim-lua/kickstart.nvim/blob/master/init.lua) is much easier to start.
+~The [kickstart](https://github.com/nvim-lua/kickstart.nvim/blob/master/init.lua) is much easier to start.~
+
+After using Lazy.nvim, this is kind of user friendly - it can automatically install packages (via mason) on the first nvim invocation.
 
 # Install from clone
 
@@ -13,7 +15,7 @@ python -m venv ~/.venv/nvim
 ~/.venv/nvim/bin/python -m pip install pynvim
 ```
 
-## Git clone or copy
+## Git clone or copy this repo
 If ~/.config/nvim/ folder is empty or it can be removed and create a new one, then use git clone:
 ```
 git clone https://github.com/zhaowb/init.lua.git ~/.config/nvim/
@@ -30,7 +32,9 @@ git apply ~/.config/nvim/bypass-treesitter-vim-highlight-error.diff
 ```
 After :Lazy auto refresh treesitter, the HEAD may detached. In this case, it may need manual sync to master and re-apply bypass depending on the situation.
 
-## pycodestyle config
+## ~pycodestyle config~
+Following is not in use. Only for reference.
+
 Python LSP uses pycodestyle by default (pylsp.plugins.pycodestyle)
 Set config file as example (if none exists and necessary to make changes):
 ```
