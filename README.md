@@ -59,4 +59,4 @@ Tool [rg](https://github.com/BurntSushi/ripgrep#installation) and [fd](https://g
 "<leader>F" for format current file (by mappings.lua), including isort.
 
 %%comment ?%%
-
+%%fake 2%%
