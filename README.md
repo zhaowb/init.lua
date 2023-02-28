@@ -58,3 +58,5 @@ Tool [rg](https://github.com/BurntSushi/ripgrep#installation) and [fd](https://g
 'gl' for goto diagnositic in float window (see above link), '[d', ']d' for prev/next diagnositic
 "<leader>F" for format current file (by mappings.lua), including isort.
 
+%%comment ?%%
+
