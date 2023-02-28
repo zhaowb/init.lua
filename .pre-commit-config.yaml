@@ -1,0 +1,10 @@
+repos:
+- repo: local
+  hooks:
+    - id: no-squash-from-git-flow-branch
+      language: system
+      name: No squash from git flow branch
+      description: Squash merge from main/develop/release*/hotfix* can cause false conflict
+      entry: ./tools/check-squash.sh
+      require_serial: true
+      verbose: true
