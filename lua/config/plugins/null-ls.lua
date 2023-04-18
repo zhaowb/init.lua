@@ -9,7 +9,8 @@ return {
                 mason.setup()
                 -- following logic are copied from mason-lspconfig/ensure_installed.lua
                 local make_sure_install = {
-                    "isort", "black", "ruff"
+                    "isort", "black", "ruff",
+                    "rust-analyzer",
                 }
                 local mason_reg = require("mason-registry")
                 local notify = require "mason-core.notify"
@@ -38,6 +39,7 @@ return {
                 nls.builtins.formatting.black,
                 nls.builtins.formatting.ruff,
                 nls.builtins.diagnostics.ruff,
+                nls.builtins.formatting.rome,
             },
             -- format before save, copied from
             -- https://github.com/jose-elias-alvarez/null-ls.nvim/wiki/Formatting-on-save
