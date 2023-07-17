@@ -31,5 +31,6 @@ return {
             -- use rg replace grep
             vim.g.gitgutter_grep = 'rg'
         end
-    }
+    },
+    { "lukas-reineke/indent-blankline.nvim" }
 }
